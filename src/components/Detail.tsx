@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Detail = ({ recipe, onBack }) => {
   const {
@@ -16,13 +16,22 @@ const Detail = ({ recipe, onBack }) => {
 
   return (
     <div className="detail-page">
+      <button onClick={onBack} className="backButton">
+        Back
+      </button>
       <div className="detail-header">
-        <h2>{strMeal}</h2>
         <img src={strMealThumb} alt={strMeal} />
+        <p>
+          <strong>Name:</strong> {strMeal}
+        </p>
+        <p>
+          <strong>Category:</strong> {strCategory}
+        </p>
+        <p>
+          <strong>Area:</strong> {strArea}
+        </p>
       </div>
       <div className="detail-info">
-        <p><strong>Category:</strong> {strCategory}</p>
-        <p><strong>Area:</strong> {strArea}</p>
         <h3>Ingredients:</h3>
         <ul>
           <li>{strIngredient1}</li>
@@ -33,7 +42,6 @@ const Detail = ({ recipe, onBack }) => {
         </ul>
         <h3>Instructions:</h3>
         <p>{strInstructions}</p>
-        <button onClick={onBack}>Back</button>
       </div>
     </div>
   );
